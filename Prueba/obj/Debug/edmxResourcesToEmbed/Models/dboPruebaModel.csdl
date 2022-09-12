@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dboPruebaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Seller" Relationship="Self.FK__Seller__City_Id__267ABA7A" FromRole="City" ToRole="Seller" />
+  </EntityType>
+  <EntityType Name="Seller">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Names" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Last_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Document" Type="Int64" Nullable="false" />
+    <Property Name="City_Id" Type="Int64" Nullable="false" />
+    <NavigationProperty Name="City" Relationship="Self.FK__Seller__City_Id__267ABA7A" FromRole="Seller" ToRole="City" />
+  </EntityType>
+  <Association Name="FK__Seller__City_Id__267ABA7A">
+    <End Role="City" Type="Self.City" Multiplicity="1" />
+    <End Role="Seller" Type="Self.Seller" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="Seller">
+        <PropertyRef Name="City_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="dboPruebaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="City" EntityType="Self.City" />
+    <EntitySet Name="Seller" EntityType="Self.Seller" />
+    <AssociationSet Name="FK__Seller__City_Id__267ABA7A" Association="Self.FK__Seller__City_Id__267ABA7A">
+      <End Role="City" EntitySet="City" />
+      <End Role="Seller" EntitySet="Seller" />
+    </AssociationSet>
+    <EntitySet Name="UsuarioApi" EntityType="dboPruebaModel.UsuarioApi" />
+  </EntityContainer>
+  <EntityType Name="UsuarioApi">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

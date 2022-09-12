@@ -1,0 +1,11 @@
+C:\Users\ANDRES M ESCOBAR\source\repos\Prueba\Prueba\bin\Debug\Prueba.dll.config
+C:\Users\ANDRES M ESCOBAR\source\repos\Prueba\Prueba\bin\Debug\Prueba.dll
+C:\Users\ANDRES M ESCOBAR\source\repos\Prueba\Prueba\bin\Debug\Prueba.pdb
+C:\Users\ANDRES M ESCOBAR\source\repos\Prueba\Prueba\bin\Debug\EntityFramework.dll
+C:\Users\ANDRES M ESCOBAR\source\repos\Prueba\Prueba\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ANDRES M ESCOBAR\source\repos\Prueba\Prueba\bin\Debug\EntityFramework.xml
+C:\Users\ANDRES M ESCOBAR\source\repos\Prueba\Prueba\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ANDRES M ESCOBAR\source\repos\Prueba\Prueba\obj\Debug\Prueba.csproj.CoreCompileInputs.cache
+C:\Users\ANDRES M ESCOBAR\source\repos\Prueba\Prueba\obj\Debug\Prueba.csproj.CopyComplete
+C:\Users\ANDRES M ESCOBAR\source\repos\Prueba\Prueba\obj\Debug\Prueba.dll
+C:\Users\ANDRES M ESCOBAR\source\repos\Prueba\Prueba\obj\Debug\Prueba.pdb

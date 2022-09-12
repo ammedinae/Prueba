@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dboPruebaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Seller">
+    <Key>
+      <PropertyRef Name="Code" />
+    </Key>
+    <Property Name="Code" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Names" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Last_Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Document" Type="bigint" Nullable="false" />
+    <Property Name="City_Id" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UsuarioApi">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="1000" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Seller__City_Id__267ABA7A">
+    <End Role="City" Type="Self.City" Multiplicity="1" />
+    <End Role="Seller" Type="Self.Seller" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="Code" />
+      </Principal>
+      <Dependent Role="Seller">
+        <PropertyRef Name="City_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="dboPruebaModelStoreContainer">
+    <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Seller" EntityType="Self.Seller" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UsuarioApi" EntityType="Self.UsuarioApi" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Seller__City_Id__267ABA7A" Association="Self.FK__Seller__City_Id__267ABA7A">
+      <End Role="City" EntitySet="City" />
+      <End Role="Seller" EntitySet="Seller" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
